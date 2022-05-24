@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Manager.h"
 #import "KitchenDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ManagerWhoIsCheery : NSObject <KitchenDelegate>
+@interface ManagerWhoIsCheery : Manager <KitchenDelegate>
 
 @end
 

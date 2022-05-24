@@ -7,13 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KitchenDelegate.h"
+#import "Kitchen.h"
+#import "Pizza.h"
+
+@protocol PizzaManagerDelegate <NSObject>
+
+- (NSString *)deliverPizza: (Pizza *)pizza;
+
+@end
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Manager : NSObject <KitchenDelegate>
+@interface Manager : NSObject <PizzaManagerDelegate>
 
-
+@property (nonatomic, weak) id<PizzaManagerDelegate> delegate;
 
 @end
 

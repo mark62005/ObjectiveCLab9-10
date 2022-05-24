@@ -11,6 +11,8 @@
 #import "Pizza.h"
 #import "ManagerWhoHatesAnchovies.h"
 #import "ManagerWhoIsCheery.h"
+#import "DeliveryCar.h"
+#import "DeliveryService.h"
 
 NSString* getUserInput(NSString *prompt) {
   NSLog(@"%@", prompt);
@@ -46,6 +48,8 @@ int main(int argc, const char * argv[])
     Kitchen *restaurantKitchen = [Kitchen new];
     ManagerWhoHatesAnchovies *james = [ManagerWhoHatesAnchovies new];
     ManagerWhoIsCheery *thomas = [ManagerWhoIsCheery new];
+    DeliveryCar *deliveryCar = [DeliveryCar new];
+    DeliveryService *deliveryService = [DeliveryService new];
     
     while (TRUE) {
       NSString *mangerInput = getUserInput(@"Please choose a manager: \n1. James \n2. Thomas \n3. None");
@@ -84,6 +88,7 @@ int main(int argc, const char * argv[])
       
       if (pizza) {
         NSLog(@"Pizza has been made successfully.");
+        deliveryService.delegate = deliveryCar;
       } else {
         NSLog(@"Something went wrong.");
       }

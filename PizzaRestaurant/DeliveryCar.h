@@ -1,5 +1,5 @@
 //
-//  ManagerWhoHatesAnchovies.h
+//  DeliveryCar.h
 //  PizzaRestaurant
 //
 //  Created by Mark Wong on 2022-05-24.
@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Manager.h"
-#import "KitchenDelegate.h"
+#import "DeliveryService.h"
+#import "Pizza.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ManagerWhoHatesAnchovies : Manager <KitchenDelegate>
+@interface DeliveryCar : NSObject <DeliveryServiceDelegate>
+
+- (NSString *)deliverPizza: (Pizza *)pizza;
 
 @end
 

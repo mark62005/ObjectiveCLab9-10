@@ -20,4 +20,18 @@
   return self;
 }
 
+- (NSString *) description {
+  NSString *size = @"";
+  if (_size == PizzaSizeSmall) {
+    size = @"small";
+  } else if (_size == PizzaSizeMedium) {
+    size = @"medium";
+  } else if (_size == PizzaSizeLarge) {
+    size = @"large";
+  }
+  
+  NSString *toppings = [self.toppings componentsJoinedByString:@", "];
+  return [NSString stringWithFormat:@"%@ pizza with %@", size, toppings];
+}
+
 @end
